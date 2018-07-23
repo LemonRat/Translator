@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_anchor="@+id/fab_container"
+        app:layout_anchorGravity="right|top">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:background="#4acf87"
+            android:padding="10dp">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/title_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:titleTextColor="@android:color/white"
+                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            </android.support.v7.widget.Toolbar>
+
+            <EditText
+                android:id="@+id/word_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="60dp"
+                android:background="@null"
+                android:focusable="true"
+                android:hint="请输入要翻译的词或句子"
+                android:textColor="@android:color/white"
+                android:textColorHint="#E0E0E0"
+                android:textSize="16sp"/>
+
+            <ImageButton
+                android:id="@+id/delete_btn"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="50dp"
+                android:background="@null"
+                android:src="@drawable/ic_delete"/>
+
+            <ImageButton
+                android:id="@+id/camera_btn"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@null"
+                android:src="@drawable/ic_camera"/>
+
+            <ImageButton
+                android:id="@+id/lookup_btn"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="50dp"
+                android:background="@null"
+                android:src="@drawable/ic_send"/>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#EEE0E5"
+            android:padding="8dp">
+
+            <!--<android.support.v7.widget.RecyclerView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+            <!--</android.support.v7.widget.RecyclerView>-->
+
+            <TextView
+                android:id="@+id/translation_title_tv"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:background="@drawable/bg_border"
+                android:paddingTop="7dp"
+                android:text="   译文"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:textIsSelectable="true"
+                android:id="@+id/translation_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="40dp"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"/>
+            <ImageButton
+                android:id="@+id/copy_btn"
+                android:background="@null"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="18dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_copy"
+                android:layout_width="35dp"
+                android:layout_height="35dp"/>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="92dp">
+
+                <RelativeLayout
+                    android:id="@+id/result_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_border2">
+
+                    <TextView
+                        android:id="@+id/title_dictionary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="15dp"
+                        android:paddingTop="16dp"
+                        android:text="字典"
+                        android:textColor="@android:color/black"/>
+
+                    <TextView
+                        android:layout_marginTop="40dp"
+                        android:id="@+id/us_phonetic_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="18dp"
+                        android:textSize="12sp"
+                        android:text="美：gud"/>
+
+                    <ImageButton
+                        android:background="@null"
+                        android:src="@drawable/animation"
+                        android:layout_toEndOf="@id/us_phonetic_tv"
+                        android:layout_marginTop="53dp"
+                        android:id="@+id/us_phonetic_btn"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"/>
+
+                    <TextView
+                        android:layout_toEndOf="@id/us_phonetic_btn"
+                        android:layout_marginTop="40dp"
+                        android:id="@+id/uk_phonetic_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="12dp"
+                        android:paddingTop="18dp"
+                        android:textSize="12sp"
+                        android:text="英：gud"/>
+
+                    <ImageButton
+                        android:background="@null"
+                        android:src="@drawable/animation"
+                        android:layout_toEndOf="@id/uk_phonetic_tv"
+                        android:layout_marginTop="53dp"
+                        android:id="@+id/uk_phonetic_btn"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"/>
+
+                    <TextView
+                        android:layout_marginTop="70dp"
+                        android:id="@+id/explains_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="18dp"
+                        android:paddingTop="20dp"
+                        android:textSize="12sp"
+                        android:text="n. 好处；善行；慷慨的行为
+adj. 好的；优良的；愉快的；虔诚的
+adv. 好
+n. (Good)人名；(英)古德；(瑞典)戈德"
+                        android:textColor="@android:color/black"/>
+
+                    <TextView
+                        android:layout_marginTop="165dp"
+                        android:id="@+id/web_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="18dp"
+                        android:textSize="12sp"
+                        android:text="Good
+好，善，商品
+
+public good
+公共物品
+公益事业
+公共财产
+
+Good Job
+干的出色
+干得好
+好工作
+
+
+
+"/>
+
+
+                </RelativeLayout>
+
+
+            </ScrollView>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <com.lemonrat.youdaofanyidemo.FloatingActionButtonContainerView
+        android:id="@+id/fab_container"
+        android:layout_gravity="bottom|right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </com.lemonrat.youdaofanyidemo.FloatingActionButtonContainerView>
+
+</android.support.design.widget.CoordinatorLayout>
